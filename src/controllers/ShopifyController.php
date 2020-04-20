@@ -9,11 +9,6 @@
  */
 
 namespace fatfish\shopifysync\controllers;
-
-use craft\commerce\models\ProductType;
-use fatfish\shopifysync\services\ShopifySyncService;
-use fatfish\shopifysync\ShopifySync;
-
 use Craft;
 use craft\web\Controller;
 
@@ -23,9 +18,6 @@ use craft\web\Controller;
  * @since     1.0.0
  */
 use \fatfish\shopifysync\services\ShopifySyncService as shopify;
-use yii\web\Response;
-use const Sodium\CRYPTO_AEAD_AES256GCM_ABYTES;
-
 class ShopifyController extends Controller
 {
 

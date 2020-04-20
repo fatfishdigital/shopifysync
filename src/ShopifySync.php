@@ -10,11 +10,7 @@
 
 namespace fatfish\shopifysync;
 
-use craft\commerce\helpers\Product;
-use craft\models\CategoryGroup;
-use craft\models\FieldLayout;
-use craft\records\FieldLayoutTab;
-use craft\services\Fields;
+
 use fatfish\shopifysync\fieldtypes\ShopifyFieldType;
 use fatfish\shopifysync\services\ShopifyProductService;
 use fatfish\shopifysync\services\ShopifySyncService;
@@ -26,10 +22,8 @@ use craft\services\Plugins;
 use craft\events\PluginEvent;
 use craft\web\UrlManager;
 use craft\events\RegisterUrlRulesEvent;
-use craft\events\RegisterComponentTypesEvent;
-use Psy\Input\CodeArgument;
 use yii\base\Event;
-use function GuzzleHttp\Psr7\try_fopen;
+
 
 /**
  * Class ShopifySync
