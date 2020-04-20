@@ -33,4 +33,4 @@ Some things to do, and ideas for potential features:
 
 * Release it
 
-Brought to you by [Fatfish](www.fatfish.com.au)
+Brought to you by [Fatfish](https://www.fatfish.com.au)
