@@ -1,0 +1,52 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * ShopifySync plugin for Craft CMS 3.x
+ *
+ * ShopifySync Settings.twig
+ *
+ * @author    Fatfish
+ * @copyright Copyright (c) 2020 Fatfish
+ * @link      www.fatfish.com.au
+ * @package   ShopifySync
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("fatfish\\shopifysync\\assetbundles\\shopifysync\\ShopifySyncAsset") %}
+<h3>Enter Shopify API Details</h3>
+{{ forms.textField({
+    label: 'API Key',
+    instructions: 'Enter Shopify API key',
+    id: 'apikey',
+    name: 'apikey',
+    value: settings['apikey']})
+}}
+
+
+{{ forms.passwordField({
+    label: 'Password',
+    instructions: 'Enter Shopify password',
+    id: 'password',
+    name: 'password',
+    value: settings['password']})
+}}
+
+
+{{ forms.textField({
+    label: 'API End Point URL',
+    instructions: 'Private applications authenticate with Shopify through basic HTTP authentication, Enter api URL',
+    id: 'apiurl',
+    name: 'apiurl',
+    value: settings['apiurl']})
+}}
+
+{{ forms.textField({
+    label: 'Shared Secret',
+    instructions: 'Enter Shared Secret',
+    id: 'secret',
+    name: 'secret',
+    value: settings['secret']})
+}}

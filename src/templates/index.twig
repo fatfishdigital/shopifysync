@@ -1,0 +1,67 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * ShopifySync plugin for Craft CMS 3.x
+ *
+ * ShopifySync index.twig
+ *
+ * @author    Fatfish
+ * @copyright Copyright (c) 2020 Fatfish
+ * @link      www.fatfish.com.au
+ * @package   ShopifySync
+ * @since     1.0.0
+ */
+#}
+
+{% extends "_layouts/cp" %}
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("fatfish\\shopifysync\\assetbundles\\shopifysync\\ShopifySyncAsset") %}
+{% do view.registerAssetBundle("fatfish\\shopifysync\\assetbundles\\indexcpsection\\IndexCPSectionAsset") %}
+
+{% set docsUrl = "https://github.com/fatfishdigital/shopify-sync/blob/master/README.md" %}
+
+{% set title = "ShopifySync" %}
+
+{% set pluginCpUrl = url('shopify-sync') %}
+
+{% set iconUrl = view.getAssetManager().getPublishedUrl('@fatfish/shopifysync/assetbundles/indexcpsection/dist', true) ~ '/img/Index-icon.svg' %}
+
+{% set extraPageHeaderHtml %}
+    <div class="buttons">
+        <a href="{{ pluginCpUrl }}" class="btn submit add icon">{{ "Click Me!"|t('shopify-sync') }}</a>
+    </div>
+{% endset %}
+
+{% set content %}
+
+    <div class="buttons">
+        <input type="button" class="btn submit" value="Import Products" id="fetch_product_btn">
+
+    </div>
+    <div class="utility-status">
+        <div class="progressbar has-status" style="opacity: 0;" id="pbar">
+            <div class="progressbar-inner" style="width: 100%;" id="pbar-inner">
+
+            </div>
+        </div>
+        <div class="progressbar-status" id="pmessage" style="display: none">Fetching Products</div>
+    </div>
+<div id="log-board" style="width: 50%; margin: 0 auto;">
+
+    <table class="product Log">
+        <caption><h2>Product Import Log</h2></caption>
+        <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Message</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+        <tbody class="productbody">
+
+        </tbody>
+    </table>
+    </div>
+
+{% endset %}

@@ -1,0 +1,44 @@
+{
+    "name": "fatfish/shopify-sync",
+    "description": "Import and Export Products from Shopify",
+    "type": "craft-plugin",
+    "version": "1.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "shopifysync"
+    ],
+    "support": {
+        "docs": "https://github.com/fatfishdigital/shopify-sync/blob/master/README.md",
+        "issues": "https://github.com/fatfishdigital/shopify-sync/issues"
+    },
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Fatfish",
+            "homepage": "www.fatfish.com.au"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "autoload": {
+        "psr-4": {
+          "fatfish\\shopifysync\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "ShopifySync",
+        "handle": "shopify-sync",
+        "developer": "Fatfish",
+        "developerUrl": "www.fatfish.com.au",
+        "documentationUrl": "https://github.com/fatfishdigital/shopify-sync/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/fatfishdigital/shopify-sync/master/CHANGELOG.md",
+        "components": {
+            "shopifySyncService": "fatfish\\shopifysync\\services\\ShopifySyncService"
+        },
+        "class": "fatfish\\shopifysync\\ShopifySync"
+    }
+}
