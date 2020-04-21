@@ -81,21 +81,17 @@
         {
 
             $product_options = $shopifyFieldtype->fetch_variants();
-
-
-
-            if(is_null($product_options))
+            if(!is_null($product_options))
             {
                 self::create_variant_layout();
             }
-            $product_options = $shopifyFieldtype->fetch_variants();
+
             $Fields = new \craft\services\Fields();
             $fieldsService = Craft::$app->getFields();
             foreach ($product_options as $key=>$value):
                 $does_field_exist= $Fields->getFieldByHandle($value);
                 if(!isset($does_field_exist))
                 {
-
                     $field = $fieldsService->createField([
                             'type' => 'craft\fields\PlainText',
                             'groupId' => 1,
@@ -116,10 +112,6 @@
 
                 }
                 endforeach;
-
-
-
-
             $FieldLayoutData = ShopifySyncRecord::find()->one();
             self::shopify_product_field_layout($product_options,$producthandle,$FieldLayoutData);
 
