@@ -206,7 +206,7 @@
             );
 
             Craft::$app->getFields()->saveField($product_Image_field);
-            $Image_Field=Craft::$app->getFields()->getFieldByHandle('Image');
+            $Image_Field=Craft::$app->getFields()->getFieldByHandle('image');
 
 
             $FieldlayoutField = new FieldLayoutField();
