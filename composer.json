@@ -2,7 +2,7 @@
     "name": "fatfish/shopify-sync",
     "description": "Import and Export Products from Shopify",
     "type": "craft-plugin",
-    "version": "v1.0.1",
+    "version": "v1.0.2",
     "keywords": [
         "craft",
         "cms",
